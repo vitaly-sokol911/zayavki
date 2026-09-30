@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; connect-src 'none'; base-uri 'none'; object-src 'none'">
+<meta name="color-scheme" content="light dark">
+<title>Страница не найдена</title>
+<style>
+:root{
+  --accent:#e8482a;--paper:#eef0f3;--surface:#fff;--line:#e0e4ea;--line-2:#c7ced8;
+  --ink:#14171c;--muted:#5f6773;--muted-2:#8e97a4;
+  --font-display:Georgia,"Times New Roman",serif;
+  --font-ui:"Segoe UI Variable Text","Segoe UI",-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  --font-mono:"Cascadia Mono",Consolas,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0d0f13;--surface:#15181e;--line:#252b34;--line-2:#39414e;--ink:#e9ecf2;--muted:#98a1ae;--muted-2:#6e7784;--accent:#ff6a4d}
+}
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;
+  font:400 15px/1.55 var(--font-ui);color:var(--ink);background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(60rem 40rem at 82% -8%,rgba(232,72,42,.10),transparent 62%);
+}
+.stub{
+  position:relative;max-width:400px;width:100%;background:var(--surface);
+  border:1px solid var(--line);border-radius:18px;padding:26px 28px;
+  box-shadow:0 2px 4px rgba(15,20,30,.06),0 28px 64px -20px rgba(15,20,30,.34);
+}
+.eyebrow{font:600 10.5px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2)}
+.no{font:600 30px/1 var(--font-mono);letter-spacing:.02em;margin-top:9px}
+.perf{position:relative;border-top:2px dashed var(--line-2);margin:22px -28px 20px}
+.perf::before,.perf::after{content:"";position:absolute;top:-13px;width:24px;height:24px;border-radius:50%;background:var(--paper);border:1px solid var(--line)}
+.perf::before{left:-13px;clip-path:inset(0 0 0 50%)}
+.perf::after{right:-13px;clip-path:inset(0 50% 0 0)}
+h1{font-family:var(--font-display);font-weight:400;font-size:25px;letter-spacing:-.02em;margin:0 0 8px}
+p{color:var(--muted);margin:0 0 20px;font-size:14.5px}
+a.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--ink);color:var(--paper);text-decoration:none;
+  padding:11px 20px;border-radius:9px;font-weight:600;font-size:14.5px;
+}
+a.btn:hover{opacity:.9}
+.stamp{
+  position:absolute;top:20px;right:22px;transform:rotate(-9deg);
+  border:2.5px solid var(--accent);color:var(--accent);border-radius:5px;
+  font:700 11px/1 var(--font-mono);letter-spacing:.16em;padding:7px 9px;opacity:.92;
+}
+</style>
+</head>
+<body>
+  <div class="stub">
+    <div class="stamp">НЕ НАЙДЕНО</div>
+    <div class="eyebrow">Ошибка</div>
+    <div class="no">404</div>
+    <div class="perf"></div>
+    <h1>Такой страницы здесь нет</h1>
+    <p>Возможно, ссылка устарела или в адресе опечатка. Форма приёма заявок открывается по кнопке ниже.</p>
+    <a class="btn" href="./">Открыть форму заявки</a>
+  </div>
+</body>
+</html>
